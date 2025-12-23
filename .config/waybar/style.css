@@ -1,0 +1,63 @@
+/* Importa as cores do Wallpaper */
+@import '../../.cache/wal/colors-waybar.css';
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0); /* Fundo totalmente transparente (o blur vem dos módulos) */  
+}
+
+/* Container geral dos módulos (fundo translúcido) */
+.modules-left, .modules-center, .modules-right {
+    background: @color1; /* Cor escura do wallpaper */
+    opacity: 0.85;           /* Translucidez */
+    border: 1px solid @color4; /* Borda sutil com cor do tema */
+    border-radius: 15px;     /* Cantos arredondados */
+    padding: 5px 15px;
+}
+
+/* Espaçamento entre os containers */
+.modules-center {
+    margin: 0 10px;
+}
+
+/* Botões e Texto */
+#custom-launcher, #workspaces button, #clock, #pulseaudio, #custom-power, #tray, #hyprland-window {
+    color: @foreground;
+    padding: 0 5px;
+}
+
+/* Workspace Ativo */
+#workspaces button.active {
+    color: @color2; /* Cor de destaque do wallpaper */
+    border-bottom: 2px solid @color2;
+}
+
+/* Hover effects */
+#custom-launcher:hover, #custom-power:hover {
+    background: @color1;
+    color: @background;
+    border-radius: 10px;
+}
+
+/* Janela Focada */
+#window {
+    color: @color6;
+}
+
+/* Tray icons */
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @color4;
+}
