@@ -10,7 +10,7 @@ Configurações pessoais (aprendendo, meio quebrado ainda)
 
 * **OS:** Arch Linux
 * **WM:** Hyprland
-* **Bar:** Waybar (Custom CSS & Modules)
+* **Bar:** Noctalia-shell
 * **Terminal:** Kitty
 * **Shell:** Bash
 
