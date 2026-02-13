@@ -11,7 +11,7 @@ Configurações pessoais (aprendendo, meio quebrado ainda)
 * **OS:** Arch Linux
 * **WM:** Hyprland
 * **Bar:** Noctalia-shell
-* **Terminal:** Kitty
+* **Terminal:** Ghostty
 * **Shell:** Bash
 
 Conifguração usada pra hardware antigo:
