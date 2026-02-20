@@ -1,0 +1,72 @@
+#!/bin/bash
+# Ghostty IDE setup - creates splits and runs commands
+
+# Pick folder first
+FOLDER=$(zenity --file-selection --directory --title="Select project folder")
+
+# Exit if cancelled
+[ -z "$FOLDER" ] && exit 0
+
+# Disable mouse focus during setup
+hyprctl keyword input:follow_mouse 0
+
+# Open ghostty in selected folder
+ghostty --working-directory="$FOLDER" &
+
+# Wait until ghostty window is focused (max 5 seconds)
+for i in {1..50}; do
+    if hyprctl activewindow -j | grep -q '"class": "ghostty"'; then
+        sleep 0.3
+        break
+    fi
+    sleep 0.1
+done
+
+# Helper function for reliable chord
+chord() {
+    wtype -M ctrl -k g -m ctrl
+    sleep 0.2
+    wtype -k "$1"
+    sleep 0.3
+}
+
+# Helper for navigation
+nav() {
+    wtype -M ctrl -k "$1" -m ctrl
+    sleep 0.2
+}
+
+# Create right split and resize
+chord d
+chord r
+
+# Create bottom split and resize
+chord apostrophe
+chord t
+
+# Clear terminal in bottom-right
+nav j
+wtype 'clear'
+wtype -k Return
+sleep 0.2
+
+# Go up and type nvim
+nav k
+wtype 'nvim'
+wtype -k Return
+sleep 0.2
+
+# Go left and type claude
+nav h
+wtype 'clear'
+wtype -k Return
+sleep 0.2
+wtype 'claude'
+wtype -k Return
+sleep 0.2
+
+# Return to left pane
+nav h
+
+# Re-enable mouse focus
+hyprctl keyword input:follow_mouse 1

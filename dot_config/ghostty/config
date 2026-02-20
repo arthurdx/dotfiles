@@ -1,0 +1,16 @@
+config-file = /home/arthur/.config/ghostty/colors.conf
+background-opacity = 0.80
+background-blur = true
+font-family = "Noto Serif Nushu"
+
+keybind = ctrl+g>d=new_split:right
+keybind = ctrl+g>r=resize_split:left,510
+keybind = ctrl+g>apostrophe=new_split:down
+keybind = ctrl+g>t=resize_split:down,120
+
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+
+keybind = ctrl+w>w=close_surface
