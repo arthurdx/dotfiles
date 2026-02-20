@@ -8,6 +8,9 @@ Configurações pessoais (aprendendo, meio quebrado ainda)
 
 ![Alt text](prints/tiling.png "Tiling")
 
+![Alt text](prints/ide.png "IDE")
+
+
 * **OS:** Arch Linux
 * **WM:** Hyprland
 * **Bar:** Noctalia-shell
